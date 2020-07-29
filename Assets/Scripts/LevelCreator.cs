@@ -4,37 +4,32 @@ using UnityEngine;
 
 public class LevelCreator : MonoBehaviour
 {
-    
     [SerializeField] private int minDistanseFromPlayer;
     [SerializeField] private int maxTerrainCount;
-    [SerializeField] private List<GameObject> terrains = new List <GameObject> ();
-
-    [HideInInspector] public Vector3 CurrentPosition;
+    [SerializeField] private List<GameObject> terrains = new List<GameObject>();
     
     private List<GameObject> currentTerrain = new List<GameObject>();
+    private Vector3 CurrentPosition;
     private int zPositionAdd;
  
-
     private void Start()
     {
         CurrentPosition = new Vector3(0, 0, 2);
         for (int i = 0; i < maxTerrainCount; i++)
-        {
             SpawnTerrain(true, new Vector3(0,0,0));
-        }
         maxTerrainCount = currentTerrain.Count;
     }
 
-    public void SpawnTerrain (bool isStart, Vector3 playerPos)
+    public void SpawnTerrain(bool _isStart, Vector3 playerPos)
     {
-        if ((CurrentPosition.z - playerPos.z < minDistanseFromPlayer) || isStart)
+        if (((CurrentPosition.z - playerPos.z) < minDistanseFromPlayer) || _isStart)
         {
             int whichTerrain = Random.Range(0, terrains.Count);
             GameObject terrain = Instantiate(terrains[whichTerrain], CurrentPosition, Quaternion.identity);
             terrain.transform.SetParent(gameObject.transform);
             currentTerrain.Add(terrain);
-            zPositionAdd = terrain.GetComponent<LanesCount>().countOfLanes;
-            if (!isStart)
+            zPositionAdd = terrain.GetComponent<LanesCount>().GetCountLanes();
+            if (!_isStart)
             {
                 if (currentTerrain.Count > maxTerrainCount)
                 {

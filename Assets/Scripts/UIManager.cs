@@ -3,31 +3,55 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager UiManager;
-    public RectTransform StartUI, GameUI, GameOverUI;
+    public static UIManager _UIManager;
+
+    [SerializeField] private RectTransform StartUI, GameUI, GameOverUI;
+    
+    private float durationMoveUI = 0.5f;
+    private Vector3 posShowUI = new Vector3(0f, 0f ,0f);
+    private Vector3 posHideUI = new Vector3(-1100f, 0f ,0f);
     
     private void Awake()
     {
-         UiManager = this;
+        _UIManager = this;
     }
 
-    void Start()
+    private void Start()
     {
-        StartUI.DOAnchorPos3D (new Vector3 (0,0,0), 0.5f);
+        ShowStartUI();
     }
 
-    void Update()
+    private void Update()
     {   
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            StartUI.DOAnchorPos3D (new Vector3 (-1100,0,0),  0.5f);
-            GameUI.DOAnchorPos3D (new Vector3 (0,0,0), 0.5f);
+            HideStartUI();
+            ShowGameUI();
         }
     }
 
-    public void UIGameOver ()
+    private void ShowStartUI()
     {
-        GameOverUI.DOAnchorPos3D (new Vector3 (0,0,0), 0.5f);
+        StartUI.DOAnchorPos3D(posShowUI, durationMoveUI);
     }
 
+    private void HideStartUI()
+    {
+        StartUI.DOAnchorPos3D (posHideUI,  durationMoveUI);
+    }
+
+    private void ShowGameUI()
+    {
+        GameUI.DOAnchorPos3D (posShowUI, durationMoveUI);
+    }
+
+    private void ShowGameOverUI()
+    {
+        GameOverUI.DOAnchorPos3D (posShowUI, durationMoveUI);
+    }
+
+    public void UIGameOver()
+    {
+        ShowGameOverUI();
+    }
 }

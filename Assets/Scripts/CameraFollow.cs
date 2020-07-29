@@ -5,28 +5,31 @@ using DG.Tweening;
 
 public class CameraFollow : MonoBehaviour
 {
-	public static CameraFollow cameraFollow;
+	public static CameraFollow _CameraFollow;
 
+	[SerializeField] private GameObject killerObject;
 	[SerializeField] private Transform player;
-	[HideInInspector] public bool isGameStart, isLose;
-
-    private Vector3 followPoint;
-	private Vector3 targetLastPos;
+	[SerializeField] private Vector3 followPoint;
+	
 	private Tweener tween;
-	private float zPos = 100f;
+	private float zPosFollowPoint = 100f; 
+	private float durationCameraMovement = 300f;
+	private float durationShortTravel = 1f;
+	private float durationFallKillerObject = 0.1f;
+	private float yPosKillerObjectCreation = 20f;
+	private float distanceFromCameraToPlayer = 2f;
+	private float distanceLosePlayer = 3f;
 
-	public GameObject KillerObject;
+	private bool isGameStart, isLose, isKillerObjectCreated;
 
 	private void Awake()
     {
-        cameraFollow = this;
+        _CameraFollow = this;
     }
 	
-
 	private void Start()
 	{
-		followPoint = player.position + new Vector3 (0, 6, -1);
-		tween = transform.DOMove(followPoint, 350).SetAutoKill(false);
+		tween = transform.DOMove(followPoint, durationCameraMovement).SetAutoKill(false);
 	}
 
 	private void Update()
@@ -34,38 +37,43 @@ public class CameraFollow : MonoBehaviour
 		if (isGameStart)
 		{
 			CameraMovment(isLose);
+			GameOverTrigger(!isKillerObjectCreated);
 		}
 	}
 
-	public bool GameOverTrigger ()
+	private void CameraMovment(bool _isLose)
 	{
-		if (player.position.z  + 3f < gameObject.transform.position.z)
+		if (!_isLose)
 		{
-			KillerObject = Instantiate(KillerObject, new Vector3 (player.position.x, 20f, player.position.z), Quaternion.identity);
-			KillerObject.transform.DOMoveY (0f, 0.1f, false);		
-			isLose = true;
-			return true;
-		}
-		return false;
-	}
-
-	private void CameraMovment (bool isLose)
-	{
-		if (!isLose)
-		{
-			followPoint = player.position + new Vector3 (0, 6, zPos);
-			transform.DOMoveX(player.position.x, 1).SetAutoKill(false);
-			if (player.position.z  > gameObject.transform.position.z + 2f)
-        	{
-        		transform.DOMoveZ(player.position.z, 1).SetAutoKill(false);   
-			}
+			followPoint.z = zPosFollowPoint;
+			transform.DOMoveX(player.position.x, durationShortTravel).SetAutoKill(false);
+			if (player.position.z > transform.position.z + distanceFromCameraToPlayer)
+        		transform.DOMoveZ(player.position.z, durationShortTravel).SetAutoKill(false);   
 			tween.ChangeEndValue(followPoint, true).Restart();
 		}
 		else
 		{
-			tween.ChangeEndValue(gameObject.transform.position, true).Restart();
+			tween.ChangeEndValue(player.transform.position, true).Restart();
 		}	
 	}
 
+	private void GameOverTrigger(bool _isKillerObjectCreated)
+	{
+		if (((player.position.z + distanceLosePlayer) < gameObject.transform.position.z) && _isKillerObjectCreated)
+		{
+			killerObject = Instantiate(killerObject, new Vector3(player.position.x, yPosKillerObjectCreation, player.position.z), Quaternion.identity);
+			killerObject.transform.DOMove(player.position, durationFallKillerObject, false);
+			isKillerObjectCreated = true;
+		}
+	}
 
+	public void SetIsLose(bool _isLose)
+	{
+		isLose = _isLose;
+	}
+
+	public void SetIsGameStart(bool _isGameStart)
+	{
+		isGameStart = _isGameStart;
+	}
 }

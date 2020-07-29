@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5058266095349568249}
   - component: {fileID: 4620693939285805651}
+  - component: {fileID: -8361912508384438268}
+  - component: {fileID: -7542160516687778783}
   m_Layer: 0
   m_Name: Wood Test
-  m_TagString: Platform
+  m_TagString: Wood platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +47,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.013301, y: 0.21418178, z: 0.7115407}
   m_Center: {x: 0.003300488, y: 0.0026922822, z: 0.001373589}
+--- !u!114 &-8361912508384438268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157701697177470513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911997220bc3ead43b96b4052f971400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xEndPos: 20
+--- !u!114 &-7542160516687778783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157701697177470513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d5265f921c3e4479c97e170e845db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5108928809172725004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 5720733367332377091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5720733367332377091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +95,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189687455718173238, guid: 58ca1d3ffc70e4f4ebe8aa5636b4707e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6086766361568283318, guid: 58ca1d3ffc70e4f4ebe8aa5636b4707e,
         type: 3}

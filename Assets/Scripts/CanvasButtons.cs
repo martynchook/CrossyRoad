@@ -8,32 +8,28 @@ public class CanvasButtons : MonoBehaviour
     [SerializeField] private Sprite musicOn, musicOff;
     [SerializeField] private Image imgLogo;
 
+    private float yPosMoveLogo = 1f;
+    private float durationMoveLogo = 1f;
+
     private void Start()
     {
-        Sequence s = DOTween.Sequence();
-		s.Append(imgLogo.rectTransform.DOMoveY(1, 1f).SetRelative().SetEase(Ease.InOutQuad));
-		s.SetLoops(-1, LoopType.Yoyo);
-
+        Sequence moveLogo = DOTween.Sequence();
+		moveLogo.Append(imgLogo.rectTransform.DOMoveY(yPosMoveLogo, durationMoveLogo).SetRelative().SetEase(Ease.InOutQuad));
+		moveLogo.SetLoops(-1, LoopType.Yoyo);
         if (PlayerPrefs.GetString("music") == "No" && gameObject.name == "btnVolume")
-        {
             GetComponent<Image>().sprite = musicOff;
-        }
         else
-        {
             GetComponent<Image>().sprite = musicOn;
-        }
     }
 
-    public void RestartGame ()
+    private void RestartGame()
     {
         if (PlayerPrefs.GetString("music") != "No")
-        {
             GetComponent<AudioSource>().Play();
-        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void MusicWork ()
+    private void MusicWork()
     {
         if (PlayerPrefs.GetString("music") == "No")
         {

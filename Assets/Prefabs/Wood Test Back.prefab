@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &153901511079940887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 837787749426474008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5112728997478955050
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,9 +22,11 @@ GameObject:
   m_Component:
   - component: {fileID: 213596635624221922}
   - component: {fileID: 352489808083383368}
+  - component: {fileID: 6320278091315112228}
+  - component: {fileID: 2317616152328906209}
   m_Layer: 0
   m_Name: Wood Test Back
-  m_TagString: Platform Back
+  m_TagString: Wood platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +59,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.013301, y: 0.21418178, z: 0.7115407}
   m_Center: {x: 0.003300488, y: 0.0026922822, z: 0.001373589}
+--- !u!114 &6320278091315112228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112728997478955050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911997220bc3ead43b96b4052f971400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xEndPos: -20
+--- !u!114 &2317616152328906209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112728997478955050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d5265f921c3e4479c97e170e845db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &837787749426474008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +95,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189687455718173238, guid: 58ca1d3ffc70e4f4ebe8aa5636b4707e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6086766361568283318, guid: 58ca1d3ffc70e4f4ebe8aa5636b4707e,
         type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2661626696263249896}
   - component: {fileID: 3901302282915720029}
   - component: {fileID: -6426178838144051373}
+  - component: {fileID: 7875395327391414514}
   m_Layer: 0
   m_Name: GrassLane
   m_TagString: Ground
@@ -110,7 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1d3175a6380444ab86ebbd99f8bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countOfLanes: 1
+  countLanes: 1
+--- !u!114 &7875395327391414514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724296203215509062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4995427744754810044
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3756018752888347837}
   - component: {fileID: 1191647974319395701}
+  - component: {fileID: 647284775397488628}
   m_Layer: 0
   m_Name: StepTrigger
   m_TagString: StepTrigger
@@ -155,6 +169,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 0.12817988}
   m_Center: {x: 0, y: 10, z: 0.060824618}
+--- !u!114 &647284775397488628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995427744754810044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c83216721e2419d438ba9fbc725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5821699626559790482
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +231,7 @@ MonoBehaviour:
   duration: 0
   minSpawnTime: 0
   maxSpawnTime: 0
+  xPosEnd: 0
   spawnMovingObjects: 0
 --- !u!1001 &1283238088997709319
 PrefabInstance:

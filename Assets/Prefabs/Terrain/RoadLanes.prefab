@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654954352139698234}
   - component: {fileID: 1654954352139698237}
+  - component: {fileID: 8171653409798436735}
   m_Layer: 0
   m_Name: StepTrigger (1)
   m_TagString: StepTrigger
@@ -44,6 +45,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 1}
   m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &8171653409798436735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954352139698235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c83216721e2419d438ba9fbc725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954352451832630
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654954352451832585}
   - component: {fileID: 1654954352451832584}
+  - component: {fileID: 8655759170899437716}
   m_Layer: 0
   m_Name: StepTrigger (4)
   m_TagString: StepTrigger
@@ -88,6 +102,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 1}
   m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &8655759170899437716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954352451832630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c83216721e2419d438ba9fbc725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954352511516661
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +126,7 @@ GameObject:
   - component: {fileID: 1654954352511516617}
   - component: {fileID: 1654954352511516662}
   - component: {fileID: 1654954352511516663}
+  - component: {fileID: 8628062502019904662}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ground
@@ -181,6 +208,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8628062502019904662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954352511516661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954352703005150
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +232,9 @@ GameObject:
   - component: {fileID: 1654954352703005139}
   - component: {fileID: 1654954352703005136}
   - component: {fileID: 1654954352703005137}
+  - component: {fileID: 8461337197709668841}
   m_Layer: 0
-  m_Name: DeathTrigger
+  m_Name: Out map
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,6 +314,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 21.694647, z: 1}
   m_Center: {x: 0, y: 10.347322, z: 0}
+--- !u!114 &8461337197709668841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954352703005150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02082ac2558e02e458e866bd1c349b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathSound: {fileID: 5944355571544330041}
 --- !u!1 &1654954353475574976
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +339,7 @@ GameObject:
   - component: {fileID: 1654954353475574980}
   - component: {fileID: 1654954353475574981}
   - component: {fileID: 1654954353475574978}
+  - component: {fileID: 2660441947013230293}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Ground
@@ -367,6 +421,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2660441947013230293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954353475574976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954353513276217
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654954353513276216}
   - component: {fileID: 1654954353513276219}
+  - component: {fileID: 7400445241809076139}
   m_Layer: 0
   m_Name: StepTrigger (2)
   m_TagString: StepTrigger
@@ -411,6 +478,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 1}
   m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &7400445241809076139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954353513276217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c83216721e2419d438ba9fbc725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954353627142287
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +502,7 @@ GameObject:
   - component: {fileID: 1654954353627142275}
   - component: {fileID: 1654954353627142272}
   - component: {fileID: 1654954353627142273}
+  - component: {fileID: 4693051154175196082}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Ground
@@ -504,6 +584,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4693051154175196082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954353627142287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954353643037672
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654954353643037675}
   - component: {fileID: 1654954353643037674}
+  - component: {fileID: 3761367409669888141}
   m_Layer: 0
   m_Name: StepTrigger (3)
   m_TagString: StepTrigger
@@ -548,6 +641,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 1}
   m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &3761367409669888141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954353643037672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c83216721e2419d438ba9fbc725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654954353737896773
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +696,7 @@ Transform:
   - {fileID: 2333918770977863096}
   - {fileID: 8644480938053726824}
   - {fileID: 119263690187791879}
+  - {fileID: 1312060518912039075}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -606,7 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1d3175a6380444ab86ebbd99f8bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countOfLanes: 5
+  countLanes: 5
 --- !u!1 &1654954353993561817
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,8 +725,9 @@ GameObject:
   - component: {fileID: 1654954353993561818}
   - component: {fileID: 1654954353993561819}
   - component: {fileID: 1654954353993561816}
+  - component: {fileID: 1434196633375572610}
   m_Layer: 0
-  m_Name: DeathTrigger (1)
+  m_Name: Out map
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,6 +807,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 16.778152, z: 1}
   m_Center: {x: 0, y: 7.8890743, z: 0}
+--- !u!114 &1434196633375572610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954353993561817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02082ac2558e02e458e866bd1c349b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathSound: {fileID: 5944355571544330041}
 --- !u!1 &1654954354087414313
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +832,7 @@ GameObject:
   - component: {fileID: 1654954354087414317}
   - component: {fileID: 1654954354087414314}
   - component: {fileID: 1654954354087414315}
+  - component: {fileID: 2099336548066536330}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Ground
@@ -793,6 +914,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2099336548066536330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654954354087414313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850c1fcf986f8d94f89745a9a587c921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3869146622231421880
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,8 +972,9 @@ MonoBehaviour:
   tagObj:
   - Car 01
   duration: 7
-  minSpawnTime: 5
+  minSpawnTime: 1
   maxSpawnTime: 7
+  xPosEnd: 20
   spawnMovingObjects: 1
 --- !u!1 &5378377139280822630
 GameObject:
@@ -888,8 +1022,9 @@ MonoBehaviour:
   tagObj:
   - Car 01 Back
   duration: 6
-  minSpawnTime: 4
-  maxSpawnTime: 3
+  minSpawnTime: 3
+  maxSpawnTime: 5
+  xPosEnd: -20
   spawnMovingObjects: 1
 --- !u!1 &5883878297280046009
 GameObject:
@@ -937,9 +1072,137 @@ MonoBehaviour:
   tagObj:
   - Car 02
   duration: 8
-  minSpawnTime: 4
+  minSpawnTime: 2
   maxSpawnTime: 5
+  xPosEnd: 20
   spawnMovingObjects: 1
+--- !u!1 &8026417168234097002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312060518912039075}
+  - component: {fileID: 5944355571544330041}
+  m_Layer: 0
+  m_Name: Out map sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1312060518912039075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026417168234097002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1654954353737896772}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &5944355571544330041
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026417168234097002}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c24bbf49486eaf444a2b57a5c4965c53, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8168576057570381514
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,8 +1249,9 @@ MonoBehaviour:
   tagObj:
   - Car 02 Back
   duration: 7
-  minSpawnTime: 6
-  maxSpawnTime: 8
+  minSpawnTime: 4
+  maxSpawnTime: 5
+  xPosEnd: -20
   spawnMovingObjects: 1
 --- !u!1001 &4204263400903646861
 PrefabInstance:

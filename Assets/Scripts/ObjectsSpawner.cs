@@ -4,21 +4,22 @@ using UnityEngine;
 using DG.Tweening;
 
 public class ObjectsSpawner : MonoBehaviour
-{
+{  
+    [SerializeField] private string [] tagObj;
+    [SerializeField] private float duration;
+    [SerializeField] private float minSpawnTime, maxSpawnTime;
+    [SerializeField] private float xPosEnd;
+    [SerializeField] private bool spawnMovingObjects = false;
     
-    ObjectPooler objectPooler;
-    
-    public string [] tagObj;
-    public float duration;
-    public float minSpawnTime, maxSpawnTime;
-    public bool spawnMovingObjects = false;
+    private ObjectPooler objectPooler;
+    private Tween tween;
 
     private void Start()
     {
         objectPooler = ObjectPooler.Instance; 
         if (spawnMovingObjects)
         {
-            SpawnMovingObjects();
+            StartCoroutine(SpawnMovingObjects());
         }
         else
         {
@@ -26,41 +27,33 @@ public class ObjectsSpawner : MonoBehaviour
         }
     }
 
-    
-    void SpawnMovingObjects()
+    private IEnumerator SpawnMovingObjects()
     {
-		objectPooler.TryToSpawnFromPool(tagObj[0], transform.position, out var gameObjectFromPool);
-        Invoke("SpawnMovingObjects", Random.Range(minSpawnTime, maxSpawnTime));
-        ObjectMove(tagObj[0], gameObjectFromPool);
+	    while(true)
+	    {
+		    yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
+		    GameObject g = objectPooler.SpawnFromPool(tagObj[0], transform.position);
+            tween = g.transform.DOMoveX(xPosEnd, duration, false);
+            tween.Restart();
+            if (transform.position.x == 0)
+            {
+                gameObject.SetActive(false);
+            }
+	    }
     }
 
-    void SpawnStaticObjects()
+    private void SpawnStaticObjects()
     {
         int Coin = Random.Range(0, 7);
         if( Coin == 0 )
         {
-            objectPooler.TryToSpawnFromPool(tagObj[2], new Vector3(Random.Range(-8, 8), 0, transform.position.z), out var gameObjectFromPool); 
+            objectPooler.SpawnFromPool(tagObj[2], new Vector3(Random.Range(-8, 8), 0, transform.position.z)); 
         }
         else
         {
             for (int i = 0; i < 3; i++) {
-                objectPooler.TryToSpawnFromPool(tagObj[Random.Range(0, 2)], new Vector3(Random.Range(-8, 8), 0, transform.position.z), out var gameObjectFromPool);
+                objectPooler.SpawnFromPool(tagObj[Random.Range(0, 2)], new Vector3(Random.Range(-8, 8), 0, transform.position.z));
             }
         } 
     }
-
-    
-    private void ObjectMove(string tag, GameObject gameObject)
-    {
-        if (tagObj[0] == "Car 01 Back" || tagObj[0] == "Car 02 Back" || tagObj[0] == "Wood Back")
-        {
-            gameObject.transform.DOMove(new Vector3 (-20, transform.position.y, transform.position.z ), duration, false);
-        }
-        else
-        {
-            gameObject.transform.DOMove(new Vector3 (20, transform.position.y, transform.position.z ), duration, false);
-        } 
-    }
-
-
 }

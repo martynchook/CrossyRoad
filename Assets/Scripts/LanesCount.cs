@@ -2,5 +2,10 @@
 
 public class LanesCount : MonoBehaviour
 {
-    public int countOfLanes;
+    [SerializeField] private int countLanes;
+
+    public int GetCountLanes()
+    {
+        return countLanes;
+    }
 }

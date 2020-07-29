@@ -8,13 +8,13 @@ TagManager:
   - Tree
   - Back
   - Car Back
-  - Platform
-  - Platform Back
   - Car
   - StepTrigger
   - Water
   - DeathTrigger
   - Coin
+  - Wood platform
+  - Platform
   layers:
   - Default
   - TransparentFX

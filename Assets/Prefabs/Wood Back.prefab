@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 4064061445567332154}
   - component: {fileID: 2936363958885607010}
   - component: {fileID: 566786209793135008}
+  - component: {fileID: 74405408407746812}
+  - component: {fileID: -4641732865204126678}
   m_Layer: 0
   m_Name: Wood Back
-  m_TagString: Platform Back
+  m_TagString: Wood platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +95,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0, y: 1.0264926, z: 1}
   m_Center: {x: 0, y: -0.004539527, z: 0}
+--- !u!114 &74405408407746812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189687455718173238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911997220bc3ead43b96b4052f971400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xEndPos: -20
+--- !u!114 &-4641732865204126678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189687455718173238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d5265f921c3e4479c97e170e845db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

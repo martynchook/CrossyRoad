@@ -7,13 +7,12 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager _LevelManager;
+    public Text StepText, StepRecordText, CoinsText;
 
     [SerializeField] private int stepsToCreateMoreLanes = 15;
-    private int steps, coins;
-    private int currentSteps;
-
-    public Text StepText, StepRecordText, CoinsText;
     
+    private int steps, coins, currentSteps;
+
     private void Awake()
     {
         _LevelManager = this;
@@ -23,8 +22,7 @@ public class LevelManager : MonoBehaviour
     {
         StepRecordText.text = "<size=60>TOP:</size> " + PlayerPrefs.GetInt("score");
         coins = PlayerPrefs.GetInt("coins");
-        CoinsText.text = PlayerPrefs.GetInt("coins")+"";
-        
+        CoinsText.text = PlayerPrefs.GetInt("coins")+"";  
     }
 
     public void SetSteps()
@@ -48,5 +46,4 @@ public class LevelManager : MonoBehaviour
             StepRecordText.text = "<size=60>TOP:</size> " + PlayerPrefs.GetInt("score");
         }
     }
-
 }

@@ -4,86 +4,66 @@ using DG.Tweening;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private LevelCreator levelCreator;
-
-    [SerializeField] private float duration = 0.2f;
+    [SerializeField] private AudioSource BackGroundAudio, JumpAudio, JumpOnWoodAudio, CoinAudio;
+    [SerializeField] private float durationMove = 0.15f;
     [SerializeField] private float jumpPower = 1f;
     [SerializeField] private GameObject playerDead;
 
     private Rigidbody rb;
-    private Touch touch;
-    private bool isGrounded, isTap;
+    private float normalScale = 0.5f;
+    private float prepJumpScale = 0.4f;
     private int countJumps = 1;
     private Vector3 startPos, endPos;
-    private Vector3 moveLeft = new Vector3 (-1, 0, 0),
-                    moveRight = new Vector3 (1, 0, 0),
-                    moveUp = new Vector3 (0, 0, 1),
-                    moveDown = new Vector3 (0, 0, -1);
-
-    public AudioSource BackGroundAudio, JumpAudio, JumpInWateAudio, DeathAudio, CarDeathAudio, JumpOnWoodAudio, CoinAudio;
+    private bool isGrounded;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         if (PlayerPrefs.GetString("music") == "Yes")
-            BackGroundAudio.Play();
+        BackGroundAudio.Play();
     }
-
+    
     private void Update()
     {
         MovementLogic();
-        if (CameraFollow.cameraFollow.GameOverTrigger())
-        {
-            if (PlayerPrefs.GetString("music") == "Yes")
-                DeathAudio.Play();
-            GameOver(); 
-        }
     }
 
     private void MovementLogic()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            GameStart();   
-        }
+            GameStart();
         if (Input.GetKeyUp(KeyCode.UpArrow))
-            posToMove(moveUp, 0);	
+            posToMove(Vector3.forward, 0);
 		else if (Input.GetKeyUp(KeyCode.DownArrow))
-            posToMove(moveDown, 180);	
+            posToMove(Vector3.back, 180);
 		else if (Input.GetKeyUp(KeyCode.RightArrow))
-            posToMove(moveRight, 90);	
+            posToMove(Vector3.right, 90);
 		else if (Input.GetKeyUp(KeyCode.LeftArrow))
-            posToMove(moveLeft, -90);			
+            posToMove(Vector3.left, -90);
         levelCreator.SpawnTerrain(false, transform.position);
     }
 
-    private void GameStart ()
+    private void GameStart()
     {
-        transform.DOScaleY(0.4f , duration);
-        CameraFollow.cameraFollow.isGameStart = true;
+        transform.DOScaleY(prepJumpScale, durationMove);
+        CameraFollow._CameraFollow.SetIsGameStart(true);
         if (PlayerPrefs.GetString("music") == "Yes")
-        BackGroundAudio.Stop(); 
+            BackGroundAudio.Stop();
     }
 
-    public void posToMove (Vector3 posToMove, int rotate) 
+    private void posToMove (Vector3 posToMove, int rotate)
     {
-        transform.DOScaleY(0.5f, duration);
-
+        transform.DOScaleY(normalScale, durationMove);
         if (isGrounded)
         {
             startPos = GetComponent<Transform>().position;
             endPos = gameObject.transform.position + posToMove;
             AdjustPositionAndRotation(new Vector3(0, rotate, 0));
-            transform.DOJump(endPos, jumpPower, countJumps, duration, false);           
+            transform.DOJump(endPos, jumpPower, countJumps, durationMove, false);
         }
     }
 
-    private void OnMouseDown()
-    {
-        transform.DOScaleY(0.4f , duration);
-        CameraFollow.cameraFollow.isGameStart = true;
-    }
-
-    private void AdjustPositionAndRotation (Vector3 newRotation)
+    private void AdjustPositionAndRotation(Vector3 newRotation)
     {
         rb.velocity = Vector3.zero;
         transform.eulerAngles = newRotation;
@@ -93,82 +73,72 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         IsGroundedUpate(collision, true);
-        if (collision.gameObject.CompareTag("DeathTrigger"))
-            GameOver(); 
-        if (collision.gameObject.CompareTag("Tree"))
-            transform.DOMove(startPos, 0.3f , false);
-        if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Platform Back"))
+        if (collision.gameObject.GetComponent<DeathTrigger>() != null)
+        {
+            GameOver();
+            if (PlayerPrefs.GetString("music") == "Yes")
+                collision.gameObject.GetComponent<DeathTrigger>().PlayDeathSound();
+        }
+        if (collision.gameObject.GetComponent<DecorCollision>() != null)
+            transform.DOMove(startPos, durationMove, false);
+        if (collision.gameObject.GetComponent<PlatformCollision>() != null)
         {
             if (PlayerPrefs.GetString("music") == "Yes")
                 JumpOnWoodAudio.Play();
             transform.parent = collision.transform;
         }
-        if (collision.gameObject.CompareTag("Coin"))
+        if (collision.gameObject.GetComponent<CoinCollision>() != null)
         {
             collision.gameObject.SetActive(false);
             LevelManager._LevelManager.SetCoins();
             if (PlayerPrefs.GetString("music") == "Yes")
                 CoinAudio.Play(); 
         }
-         if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.GetComponent<GroundCollision>() != null)
         {
             if (PlayerPrefs.GetString("music") == "Yes")
-                JumpAudio.Play(); 
+                JumpAudio.Play();
         }
-    }
-
-    private void OnCollisionExit(Collision collision) 
-    {
-        IsGroundedUpate(collision, false);
-
-        if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Platform Back"))
-        {
-             this.transform.parent = null;
-        }
-            
-    }
-
-    private void IsGroundedUpate(Collision collision, bool value) // Если переданный тег Ground, то присвоим переданное bool значение переменной _isGrounded = value;
-    {
-        if (collision.gameObject.tag == ("Ground") || collision.gameObject.tag == ("Platform") || collision.gameObject.tag == ("Platform Back"))
-        {
-            isGrounded = value;
-        }
-           
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Water"))
-        {
-            if (PlayerPrefs.GetString("music") == "Yes")
-                JumpInWateAudio.Play(); 
-            GameOver();
-        }
-        if (other.CompareTag("DeathTrigger"))
-        {
-            GameOver();
-        }
-        else if (other.CompareTag("Car") || other.CompareTag("Car Back"))
+        if (other.gameObject.GetComponent<DeathTrigger>() != null)
         {
             GameOver();
             if (PlayerPrefs.GetString("music") == "Yes")
-                CarDeathAudio.Play();
+                other.gameObject.GetComponent<DeathTrigger>().PlayDeathSound();
         }
-        else if (other.CompareTag("StepTrigger"))
+        else if (other.gameObject.GetComponent<StepTrigger>() != null)
         {
             LevelManager._LevelManager.SetSteps();
             Destroy(other.gameObject);
         }
-
     }
 
-    private void GameOver ()
+    private void OnCollisionExit(Collision collision)
+    {
+        IsGroundedUpate(collision, false);
+        if (collision.gameObject.GetComponent<PlatformCollision>() != null)
+        {
+             this.transform.parent = null;
+        }
+    }
+
+    private void IsGroundedUpate(Collision collision, bool value)
+    {
+        if ((collision.gameObject.GetComponent<GroundCollision>() != null) || (collision.gameObject.GetComponent<PlatformCollision>() != null))
+        {
+            isGrounded = value;
+        }
+    }
+
+    private void GameOver()
     {
         Instantiate(playerDead, new Vector3(transform.position.x, 0.01f, transform.position.z ), transform.rotation);
         gameObject.SetActive(false);
+        CameraFollow._CameraFollow.SetIsLose(true);
         LevelManager._LevelManager.LMGameOver();
-        UIManager.UiManager.UIGameOver();
+        UIManager._UIManager.UIGameOver();
     }
-
 }
