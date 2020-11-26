@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0a97d147-6023-89b2-09cf-5e4d14c0ed83}</ProjectGuid>
+    <ProjectGuid>{03e185d4-4690-9c21-aa50-db8513210ab7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -238,13 +238,7 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-        <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-        <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -592,31 +586,31 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>G:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road v3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>F:/TECHNOLOGIES/UNITY_C#/projects/Crossy Road/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -3,17 +3,24 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CameraFollow
     - CanvasButtons
+    - CoinCollision
+    - DeathTrigger
+    - DecorCollision
+    - GroundCollision
+    - HideObject
     - LanesCount
     - LevelCreator
     - LevelManager
     - ObjectPooler
     - ObjectsSpawner
+    - PlatformCollision
     - PlayerController
-    - SwipeController
+    - StepTrigger
     - UIManager
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -77,41 +84,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11248}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11408}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 11418}
     - Class: 114
-      Script: {instanceID: 11776}
+      Script: {instanceID: 11488}
     - Class: 114
-      Script: {instanceID: 11828}
+      Script: {instanceID: 11756}
     - Class: 114
-      Script: {instanceID: 11942}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12064}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 12152}
+      Script: {instanceID: 11928}
     - Class: 114
-      Script: {instanceID: 12390}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 12414}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12074}
     - Class: 114
-      Script: {instanceID: 12576}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12638}
+      Script: {instanceID: 12422}
     - Class: 114
-      Script: {instanceID: 12654}
+      Script: {instanceID: 12550}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12584}
+    - Class: 114
+      Script: {instanceID: 12586}
+    - Class: 114
+      Script: {instanceID: 12646}
+    - Class: 114
+      Script: {instanceID: 12662}
+    - Class: 114
+      Script: {instanceID: 12998}
+    - Class: 114
+      Script: {instanceID: 13004}
+    - Class: 114
+      Script: {instanceID: 13048}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -157,12 +176,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SwipeController
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -237,6 +250,18 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 902f58c2a5f234aa227e2beec3b7e5ea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HideObject
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StepTrigger
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -259,6 +284,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: fa6b4a337a1db7da72ce4d4f4ce8103f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeathTrigger
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -321,7 +352,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 90435e4ea2672ccbe74845d7645432fa
+      Hash: 80705e5ccc0720457664790d2539d29f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelManager
@@ -345,10 +376,16 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 58b0727707dbfe2ccec2c45e9c226b83
+      Hash: 94302d71a348157cf50c81576feab530
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LanesCount
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DecorCollision
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -357,7 +394,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 9f08e7c673a7929974a77d68074d5ac7
+      Hash: 9f533c8926e0eab7705ccee0fbd44246
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraFollow
@@ -391,6 +428,12 @@ ScriptsOnlyBuild:
     assemblyName: DOTween.dll
     namespaceName: DG.Tweening.Core
     className: DOTweenSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoinCollision
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -465,7 +508,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: fe915394f4ebf0b94c52547467fec8a3
+      Hash: ac762c88028cd374dd09d095fcc30c07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -489,7 +532,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: e79717abfd68061e38817db770c1688f
+      Hash: 4ef62d047a175a4748799f5738694152
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelCreator
@@ -513,7 +556,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 0d59981e7e01cf6d3c79159282f0ad42
+      Hash: 9deee5b6f6e29caf2eaa46b2ed44110d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectsSpawner
@@ -603,6 +646,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlatformCollision
+  - hash:
+      serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -625,6 +674,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundCollision
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
